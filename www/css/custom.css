@@ -1,0 +1,11 @@
+.page-container .page-header .page-header-holder .logo a
+{
+    background-size: 100% 100% !important;
+}
+#product_price
+{
+    background: none !important;
+    border: none !important;
+    font-size: 1.5em !important;
+    color: #757575 !important;
+}
