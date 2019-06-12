@@ -22,7 +22,8 @@
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
         <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
-        
+        <link rel="stylesheet" type="text/css" href="css/custom.css" media="screen" />
+
     </head>
     <body id='deviceready'>
         <!-- page container -->
@@ -36,26 +37,12 @@
                     
                     <!-- page logo -->
                     <div class="logo">
-                        <a href="index.html">Template</a>
+                        <a href="#">Template</a>
                     </div>
                     <!-- ./page logo -->
                     
 
-                    <!-- search -->
-                    <div class="search">
-                        <div class="search-button"><span class="fa fa-search"></span></div>
-                        <div class="search-container animated fadeInDown">
-                            <form action="#" method="post">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search..."/>
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-primary"><span class="fa fa-search"></span></button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <!-- ./search -->
+
 
                     <!-- nav mobile bars -->
                     <div class="navigation-toggle">
@@ -233,10 +220,8 @@
         <!-- ./page scripts -->
     </body>
 <script type="text/javascript">
-var username = 0;
-var password = 0;
-localStorage.setItem('username',username);  
-localStorage.setItem('password',password);  
+    localStorage.setItem('login',0);
+    localStorage.setItem('userid',0);
 </script>
 </body>
 </html>

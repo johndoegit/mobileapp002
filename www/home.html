@@ -21,7 +21,8 @@
     * Create your own at http://cspisawesome.com
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
-             <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />        
+        <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="css/custom.css" media="screen" />
     </head>
     <body id='deviceready'> 
         <!-- page container -->
@@ -40,35 +41,33 @@
                     <!-- ./page logo -->
                     
 
-                    <!-- search -->
-                    <div class="search">
-                        <div class="search-button"><span class="fa fa-search"></span></div>
-                        <div class="search-container animated fadeInDown">
-                            <form action="#" method="post">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search..."/>
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-primary"><span class="fa fa-search"></span></button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <!-- ./search -->
+
 
                     <!-- nav mobile bars -->
-                    <div class="navigation-toggle">
-                        <div class="navigation-toggle-button"><span class="fa fa-bars"></span></div>
+                    <div class="navigation-toggle" >
+                        <div class="navigation-toggle-button" id="nav_toggle"><span class="fa fa-bars"></span></div>
                     </div>
                     <!-- ./nav mobile bars -->
                     
                     <!-- navigation -->
                     <ul class="navigation" id="menu">
                         <li>
-                        <a href="#">Home</a>
+                        <a href="#" page='Product'>Home</a>
                         </li>
-                        <li><a href="#" page='Product'>Product</a></li>
-                        <li><a href="#" page='Account'>Account</a></li>
+                        <li style="display:none;" id='prod_btn'>
+                            <a href="#" >Products</a>
+                            <ul>
+                                <li><a page='Product' href="#">Product 1</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" >Account</a>
+                            <ul>
+                                <li style="display:none;" id='orders_btn'><a page='Orders' href="#">Orders</a></li>
+                                <li style="display:none;" id='acnt_edit_btn'><a page='Account' href="#">Account Edit</a></li>
+                                <li style="display:none;" id='logout_btn'><a onclick="logout()" href="#">Log-out</a></li>
+                            </ul>
+                        </li>
                     </ul>
                     <!-- ./navigation -->                        
 
@@ -86,13 +85,17 @@
                     <div class="divider"><div class="box"><span class="fa fa-angle-down"></span></div></div>                       
                     <!-- page content holder -->
                     <div class="page-content-holder">
-                        
+
+                        <center>
                         <div class="block-heading block-heading-centralized this-animate" >
                             <h2 class="heading-underline" id='page_title'>Account Login</h2>
+                            <div id="slider"></div>
                             <div class="block-heading-text" id='page_desc'>
                                 Aenean enim ipsum, suscipit sit amet nisl vitae, convallis vehicula urna. Duis iaculis nunc at enim ultrices pharetra. Maecenas consectetur orci ut condimentum porttitor. Vivamus massa lorem, sollicitudin ac rhoncus ut, fringilla eget purus. In finibus nisl sed neque pulvinar.
                             </div>
                         </div>
+                        </center>
+
                         <br>
                         <div id="page_content_view"></div>
                     </div>
