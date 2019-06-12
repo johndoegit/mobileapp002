@@ -12,7 +12,7 @@ var login = localStorage.getItem('login');
 // var product_image = 'http://localhost/wordpress/wp-content/plugins/alln1api/m_api.php?productimage';
 
 var wordpress_url = 'http://gregoriobalonzo.ml/wordpress/wp-content/plugins/alln1api/m_api.php';
-var wordpress_product = 'http://gregoriobalonzo.ml/wordpress/wp-content/plugins/alln1api/?api_key=b4bc347010d2fc2e6162df18b75bb6bd';
+var wordpress_product = 'http://gregoriobalonzo.ml/wordpress/wp-content/plugins/alln1api/?api_key=1e736ca30a127c054ff85169bd8a258e';
 var wordpress_order = 'http://gregoriobalonzo.ml/wordpress/wp-json/api/order';
 var current_user = 'http://gregoriobalonzo.ml/wordpress/wp-content/plugins/alln1api/m_api.php?currentuser';
 var userData = 'http://gregoriobalonzo.ml/wordpress/wp-content/plugins/alln1api/m_api.php?user';
@@ -20,7 +20,7 @@ var order = 'http://gregoriobalonzo.ml/wordpress/wp-content/plugins/alln1api/m_a
 var currency_link = 'http://gregoriobalonzo.ml/wordpress/wp-content/plugins/alln1api/m_api.php?currencysymbol';
 var product_image = 'http://gregoriobalonzo.ml/wordpress/wp-content/plugins/alln1api/m_api.php?productimage';
 
- 
+
 
 
 
@@ -76,7 +76,7 @@ function get_order()
 {
     var user_id = localStorage.getItem('userid')
     $.get(order+'='+user_id,function(data){
-         console.log(data);
+        console.log(data);
     })
 }
 
@@ -157,7 +157,7 @@ function menu_hide()
 }
 
 function show_error(){
-  $('#error').html(`
+    $('#error').html(`
       <div class="alert alert-danger" role="alert">
           <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
           <strong>Error!</strong> wrong username or password
@@ -166,11 +166,11 @@ function show_error(){
 }
 function login_btn_disabled(){
     $('#login_btn1').text('Please wait...');
-    $('#login_btn1').attr('disabled',true);       
+    $('#login_btn1').attr('disabled',true);
 }
 function login_btn_back(){
     $('#login_btn1').text('Submit');
-    $('#login_btn1').attr('disabled',false);       
+    $('#login_btn1').attr('disabled',false);
 }
 
 
@@ -186,20 +186,20 @@ function login_status(){
 
 
 function product_page(){
-        if(login_status(localStorage.getItem('login')) == 0 ){
-            login_page();
-        }else{
+    if(login_status(localStorage.getItem('login')) == 0 ){
+        login_page();
+    }else{
         $('#page_title').text('PRODUCT');
-        $('#page_desc').text('product description text'); 
+        $('#page_desc').text('product description text');
         $('#page_content_view').load('page/product.html');
         var varCurrency =  localStorage.getItem('currency');
-            $.getJSON(wordpress_product, function(json) {
-               var product_length = json.length;
-               var product_data = json;
-               //console.log("JSON Data: "+json[0].post_title+" "+ json[0].meta_value); 
-                for(var a = 0; a <= product_length - 1; a++){
+        $.getJSON(wordpress_product, function(json) {
+            var product_length = json.length;
+            var product_data = json;
+            //console.log("JSON Data: "+json[0].post_title+" "+ json[0].meta_value);
+            for(var a = 0; a <= product_length - 1; a++){
 
-                    var content = `
+                var content = `
 
 
 <div class='col-md-4'>   
@@ -218,47 +218,47 @@ function product_page(){
 </div>
                     `;
 
-                    $('#loop_product').append(content);
-                }       
-                 
-             });    
-        }
+                $('#loop_product').append(content);
+            }
+
+        });
+    }
 }
 
 function login_user_now(data,username,password){
-            if(data == '0'){
-                show_btn();
-                localStorage.setItem('login',1);
-                localStorage.setItem('username',username);
-                localStorage.setItem('password',password);
-                currentuser();
-                product_page();
-            }else{
-                show_error();
-                login_btn_back();
-            }
-            login_btn_back();
+    if(data == '0'){
+        show_btn();
+        localStorage.setItem('login',1);
+        localStorage.setItem('username',username);
+        localStorage.setItem('password',password);
+        currentuser();
+        product_page();
+    }else{
+        show_error();
+        login_btn_back();
+    }
+    login_btn_back();
 }
 
 function login_user_form(ee){
-login_btn_disabled();
-var username = $('#username').val();
-var password = $('#password').val();
+    login_btn_disabled();
+    var username = $('#username').val();
+    var password = $('#password').val();
 
- $.post(wordpress_url, $("#mobile_login_form").serialize(),function(data){
+    $.post(wordpress_url, $("#mobile_login_form").serialize(),function(data){
         login_user_now(data,username,password);
         login_btn_back();
- })
-   .done(function() {
-    //alert( "second success" );
-  })
-  .fail(function() {
-    //alert( "error" );
-  })
-  .always(function() {
-    //alert( "finished" );
-});
-  
+    })
+        .done(function() {
+            //alert( "second success" );
+        })
+        .fail(function() {
+            //alert( "error" );
+        })
+        .always(function() {
+            //alert( "finished" );
+        });
+
 }
 
 function login_page(){
@@ -276,8 +276,8 @@ function logout(){
     hide_btn();
     var username = 0;
     var password = 0;
-    localStorage.setItem('username',username);  
-    localStorage.setItem('password',password);  
+    localStorage.setItem('username',username);
+    localStorage.setItem('password',password);
     window.location = 'index.html';
 }
 
