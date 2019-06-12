@@ -11,15 +11,14 @@ var login = localStorage.getItem('login');
 // var currency_link = 'http://localhost/wordpress/wp-content/plugins/alln1api/m_api.php?currencysymbol';
 // var product_image = 'http://localhost/wordpress/wp-content/plugins/alln1api/m_api.php?productimage';
 
-var wordpress_url = 'http://gregoriobalonzo.ml/wordpress/wordpress/wp-content/plugins/alln1api/m_api.php';
-var wordpress_product = 'http://gregoriobalonzo.ml/wordpress/wp-content/plugins/alln1api/?api_key=1e736ca30a127c054ff85169bd8a258e';
-var wordpress_order = 'http://gregoriobalonzo.ml/wordpress/wordpress/wp-json/api/order';
-var current_user = 'http://gregoriobalonzo.ml/wordpress/wordpress/wp-content/plugins/alln1api/m_api.php?currentuser';
-var userData = 'http://gregoriobalonzo.ml/wordpress/wordpress/wp-content/plugins/alln1api/m_api.php?user';
-var order = 'http://gregoriobalonzo.ml/wordpress/wordpress/wp-content/plugins/alln1api/m_api.php?orders';
-var currency_link = 'http://gregoriobalonzo.ml/wordpress/wordpress/wp-content/plugins/alln1api/m_api.php?currencysymbol';
-var product_image = 'http://gregoriobalonzo.ml/wordpress/wordpress/wp-content/plugins/alln1api/m_api.php?productimage';
-
+var wordpress_url = 'http://gregoriobalonzo.ml/wordpress/wp-content/plugins/alln1api/m_api.php';
+var wordpress_product = 'http://gregoriobalonzo.ml/wordpress/wp-content/plugins/alln1api/?api_key=b4bc347010d2fc2e6162df18b75bb6bd';
+var wordpress_order = 'http://gregoriobalonzo.ml/wordpress/wp-json/api/order';
+var current_user = 'http://gregoriobalonzo.ml/wordpress/wp-content/plugins/alln1api/m_api.php?currentuser';
+var userData = 'http://gregoriobalonzo.ml/wordpress/wp-content/plugins/alln1api/m_api.php?user';
+var order = 'http://gregoriobalonzo.ml/wordpress/wp-content/plugins/alln1api/m_api.php?orders';
+var currency_link = 'http://gregoriobalonzo.ml/wordpress/wp-content/plugins/alln1api/m_api.php?currencysymbol';
+var product_image = 'http://gregoriobalonzo.ml/wordpress/wp-content/plugins/alln1api/m_api.php?productimage';
 
  
 
